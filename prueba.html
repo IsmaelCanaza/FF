@@ -1,0 +1,82 @@
+<div class="nav-container">
+    <div class="nav-content">
+      <!-- Phone numbers -->
+      <div class="nav-item">
+        <i class="phone-icon">📞</i>
+        <span>600 730 0073 / 800 73 0073</span>
+      </div>
+      
+      <!-- Links -->
+      <div class="nav-item">
+        <a href="#">Reclamos y sugerencias</a>
+        <a href="#">Preguntas frecuentes</a>
+      </div>
+      
+      <!-- Social Media Icons -->
+      <div class="nav-social">
+        <a href="#" class="social-icon">f</a>
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">📷</a>
+        <a href="#" class="social-icon">▶️</a>
+        <a href="#" class="social-icon">♪</a>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+  .nav-container {
+    background-color: #d1112a;
+    padding: 12px 0;
+    width: 100%;
+  }
+  
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .nav-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .nav-social {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-content {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    
+    .nav-item {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  </style>

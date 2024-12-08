@@ -1,0 +1,117 @@
+
+.container {
+    padding-top: 50px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem; /* Añadido espacio abajo */
+  }
+  
+  .tab {
+    min-height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #444;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 1rem;
+  }
+  
+  .tab.active {
+    background: #064D94;
+    color: white;
+    border-color: #064D94;
+  }
+  
+  .tab-icon {
+    font-size: 24px;
+  }
+  
+  .tab-text {
+    text-align: center;
+    font-weight: 500;
+    padding: 0 1rem;
+  }
+  
+  .content-wrapper {
+    padding: 0.5rem 1rem 1rem 1rem; /* Ajustado el padding superior */
+  }
+  
+  .content {
+    display: none;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Añadido border radius al contenido */
+  }
+  
+  .content.active {
+    display: block;
+  }
+  
+  .status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #064D94;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px 8px 0 0; /* Añadido border radius al header */
+  }
+  
+  .planned-changes {
+    padding: 2rem;
+  }
+  
+  .planned-changes table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .planned-changes td, .planned-changes th {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .metro-lines, .metrotren {
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .line-status {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .line-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .L1 { background: #E31C23; }
+  .L2 { background: #FDB912; }
+  .L3 { background: #AB5B2E; }
+  .L4 { background: #009ADF; }
+  .L4a { background: #82C7E6; }
+  .L5 { background: #0A884B; }
+  .L6 { background: #8E188E; }

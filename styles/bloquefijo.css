@@ -1,0 +1,111 @@
+.header {
+    height: 12em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    max-height: 70px;
+}
+
+.fav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fav h1 {
+    font-size: 20px;
+    padding-right: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;    /* Alinea verticalmente */
+    /*border: 1px solid #ccc; /* Solo para visualizar */
+}
+.fav h1 img {
+    padding-right: 10px;
+    height: 30px;
+}
+.menu img {
+    height: 50px;
+}
+
+
+
+.redes1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.redes2 {
+    height: 80px;
+    width: 66%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #064D94;
+}
+.redes2 h1 img {
+    padding-right: 10px;
+    height: 30px;
+}
+.redes2 h1 {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;    /* Alinea verticalmente */
+    /*border: 1px solid #ccc; /* Solo para visualizar */
+}
+.redes2 a {
+    text-decoration: none;
+}
+.redes3 {   
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.redes3 img {
+    margin-right: 10px;
+    height: 40px;
+}
+
+.antfoot {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer {
+    background-color: #ffffff;
+    text-align: center;
+    height: 10em;
+    width: 80%;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer h1 {
+    margin: 0;
+    font-size: 24px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #064D94;
+    height: 100%;
+    width: 100%;
+}
+.footlogo img {
+    height: 150px;
+}
+.footlogo2 img {
+    height: 100px;
+}

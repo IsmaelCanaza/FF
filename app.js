@@ -1,7 +1,25 @@
 // Inicialización de rutas y mapa
 const rutas = {
     ruta1,
-    ruta2
+    ruta2,
+    Expreso1,
+    Expreso2,
+    Expreso3,
+    Expreso5,
+    Expreso6,
+    Expreso7,
+    Expreso8,
+    Expreso9,
+    Expreso10,
+    Expreso11,
+    Expreso12,
+    Lechucero,
+    regularA,
+    regularB,
+    regularC,
+    regularD,
+    SuperExpreso,
+    SuperExpresoNorte
 };
 
 const map = L.map('map');

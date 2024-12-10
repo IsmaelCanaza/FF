@@ -5,7 +5,7 @@ const ruta2 = {
     frecuencia: "Cada 15 minutos",
     precio: "S/. 1.00",
     puntos: [
-        paraderos.par101.coordenadas,
+        paraderos.par200.coordenadas,
         paraderos.par102.coordenadas,
         paraderos.par103.coordenadas,
         paraderos.par104.coordenadas,
@@ -24,7 +24,7 @@ const ruta2 = {
         paraderos.par116.coordenadas
     ],
     paraderos: [
-        paraderos.par101,
+        paraderos.par200,
         paraderos.par102,
         paraderos.par103,
         paraderos.par104,

@@ -10,7 +10,7 @@
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #dc1a32;
+    background-color: #064D94;
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -50,7 +50,7 @@
     top: 0;
     width: 300px;
     height: 100%;
-    background-color: #dc1a32;
+    background-color: #064D94;
     transition: 0.3s;
     padding-top: 60px;
     z-index: 999;

@@ -1,9 +1,9 @@
 const ruta2 = {
-    nombre: "Ruta 2 - Norte",
-    descripcion: "Conexión con Terminal Norte",
-    color: "green",
+    nombre: "Alimentador Bertello",
+    descripcion: "Conexión con Terminal de Naranjal",
+    color: "yellow",
     frecuencia: "Cada 15 minutos",
-    precio: "$6.00",
+    precio: "S/. 1.00",
     puntos: [
         paraderos.par101.coordenadas,
         paraderos.par102.coordenadas,

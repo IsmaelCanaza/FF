@@ -180,7 +180,7 @@ const paraderos = {
         horarios: "6:00 AM - 10:30 PM"
     },
     par36: {
-        nombre: "Los Alisos",
+        nombre: "Alisos",
         coordenadas: [-11.982889, -77.078491],
         horarios: "6:00 AM - 10:30 PM"
     },

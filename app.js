@@ -1,8 +1,7 @@
 // Inicialización de rutas y mapa
 const rutas = {
     ruta1,
-    ruta2,
-    ruta3
+    ruta2
 };
 
 const map = L.map('map');
@@ -129,6 +128,7 @@ class Graph {
 function construirGrafo() {
     const graph = new Graph();
     
+    // Agregar conexiones dentro de la misma ruta
     Object.entries(rutas).forEach(([rutaId, ruta]) => {
         for (let i = 0; i < ruta.paraderos.length - 1; i++) {
             const paraderoActual = ruta.paraderos[i].nombre;
@@ -138,13 +138,18 @@ function construirGrafo() {
         }
     });
 
+    // Agregar conexiones entre rutas diferentes (transbordos)
     Object.entries(rutas).forEach(([rutaId1, ruta1]) => {
         Object.entries(rutas).forEach(([rutaId2, ruta2]) => {
             if (rutaId1 !== rutaId2) {
                 ruta1.paraderos.forEach(p1 => {
                     ruta2.paraderos.forEach(p2 => {
-                        if (distanciaEntrePuntos(p1.coordenadas, p2.coordenadas) < 0.5) {
+                        if (p1.nombre === p2.nombre) {
+                            // Peso 2 para transbordos en el mismo paradero
                             graph.addConnection(p1.nombre, p2.nombre, 2, rutaId2);
+                        } else if (distanciaEntrePuntos(p1.coordenadas, p2.coordenadas) < 0.1) {
+                            // Peso 3 para transbordos cercanos
+                            graph.addConnection(p1.nombre, p2.nombre, 3, rutaId2);
                         }
                     });
                 });
@@ -300,37 +305,77 @@ function mostrarRutaHibrida(ruta) {
             rutaActual = segmento.ruta;
             segmentos.push({
                 ruta: rutas[segmento.ruta],
-                tramo: []
+                tramo: [],
+                paraderos: []
             });
         }
+        
+        const rutaActualObj = rutas[segmento.ruta];
         const paraderoInicio = encontrarParadero(segmento.from, segmento.ruta);
         const paraderoFin = encontrarParadero(segmento.to, segmento.ruta);
         
-        if (paraderoInicio && paraderoFin) {
-            segmentos[segmentos.length - 1].tramo.push(paraderoInicio, paraderoFin);
+        if (!paraderoInicio || !paraderoFin) return;
+
+        // Encontrar los índices exactos en los puntos de la ruta
+        const puntosRuta = rutaActualObj.puntos;
+        let inicioIndex = -1;
+        let finIndex = -1;
+        
+        // Buscar los puntos más cercanos a los paraderos en la ruta
+        for (let i = 0; i < puntosRuta.length; i++) {
+            if (sonPuntosCercanos(puntosRuta[i], paraderoInicio.coordenadas)) {
+                inicioIndex = i;
+            }
+            if (sonPuntosCercanos(puntosRuta[i], paraderoFin.coordenadas)) {
+                finIndex = i;
+            }
+        }
+
+        if (inicioIndex !== -1 && finIndex !== -1) {
+            let puntosSegmento;
+            if (inicioIndex <= finIndex) {
+                puntosSegmento = puntosRuta.slice(inicioIndex, finIndex + 1);
+            } else {
+                puntosSegmento = puntosRuta.slice(finIndex, inicioIndex + 1).reverse();
+            }
+
+            segmentos[segmentos.length - 1].tramo.push(...puntosSegmento);
+            segmentos[segmentos.length - 1].paraderos.push(
+                { tipo: 'inicio', paradero: paraderoInicio },
+                { tipo: 'fin', paradero: paraderoFin }
+            );
         }
     });
 
-    segmentos.forEach(segmento => {
+    // Dibujar los segmentos
+    segmentos.forEach((segmento, index) => {
         if (segmento.tramo.length > 0) {
-            const polyline = L.polyline(segmento.tramo.map(p => p.coordenadas), {
+            const polyline = L.polyline(segmento.tramo, {
                 color: segmento.ruta.color,
-                weight: 3
+                weight: 3,
+                opacity: 0.8
             }).addTo(map);
             
             polylines[segmento.ruta.nombre] = polyline;
-            segmento.tramo.forEach(paradero => {
-                agregarMarcadorParadero(paradero, segmento.ruta.nombre);
+
+            // Agregar marcadores para los paraderos
+            segmento.paraderos.forEach(({ tipo, paradero }) => {
+                if (paradero) {
+                    const isTransfer = index > 0 && tipo === 'inicio' || 
+                                     index < segmentos.length - 1 && tipo === 'fin';
+                    agregarMarcadorParadero(paradero, segmento.ruta.nombre, isTransfer);
+                }
             });
         }
     });
 
-    if (segmentos.length > 0 && segmentos[0].tramo.length > 0) {
-        const bounds = L.latLngBounds(segmentos.flatMap(s => 
-            s.tramo.map(p => p.coordenadas)
-        ));
-        const center = bounds.getCenter();
-        map.setView(center, 12);
+    // Ajustar la vista del mapa
+    if (segmentos.length > 0) {
+        const todosLosPuntos = segmentos.flatMap(s => s.tramo);
+        if (todosLosPuntos.length > 0) {
+            const bounds = L.latLngBounds(todosLosPuntos);
+            map.fitBounds(bounds, { padding: [50, 50] });
+        }
     }
 
     mostrarDetallesRutaHibrida(ruta, transbordo);
@@ -339,31 +384,68 @@ function mostrarRutaHibrida(ruta) {
 function encontrarParadero(nombre, rutaId) {
     const ruta = rutas[rutaId];
     if (!ruta) return null;
-    
+
+    // Buscar primero en la ruta especificada
     const paradero = ruta.paraderos.find(p => p.nombre === nombre);
-    if (!paradero) {
-        // Buscar en otras rutas si no se encuentra en la ruta actual
-        for (let id in rutas) {
-            const otraRuta = rutas[id];
-            const paraderoEncontrado = otraRuta.paraderos.find(p => p.nombre === nombre);
-            if (paraderoEncontrado) return paraderoEncontrado;
-        }
+    if (paradero) return paradero;
+
+    // Si no se encuentra, buscar en todas las rutas
+    for (let id in rutas) {
+        if (id === rutaId) continue;
+        const otraRuta = rutas[id];
+        const paraderoEncontrado = otraRuta.paraderos.find(p => p.nombre === nombre);
+        if (paraderoEncontrado) return paraderoEncontrado;
     }
-    return paradero;
+    
+    return null;
 }
 
-function agregarMarcadorParadero(paradero, rutaNombre) {
-    const marker = L.marker(paradero.coordenadas, {
-        icon: crearIconoParadero()
-    }).addTo(map);
+function agregarMarcadorParadero(paradero, rutaNombre, isTransfer = false) {
+    const icon = L.divIcon({
+        html: `<div style="
+            background-color: ${isTransfer ? '#ff4444' : '#333'};
+            width: ${isTransfer ? '16px' : '12px'};
+            height: ${isTransfer ? '16px' : '12px'};
+            border-radius: 50%;
+            border: 2px solid white;
+        "></div>`,
+        className: 'paradero-icon',
+        iconSize: [isTransfer ? 20 : 16, isTransfer ? 20 : 16]
+    });
+
+    const marker = L.marker(paradero.coordenadas, { icon }).addTo(map);
     
     marker.bindPopup(`
         <strong>${paradero.nombre}</strong><br>
         Ruta: ${rutaNombre}<br>
+        ${isTransfer ? '<strong>Punto de transbordo</strong><br>' : ''}
         Horarios: ${paradero.horarios}
     `);
     
     markers.push(marker);
+}
+
+function encontrarParaderosComunes(ruta1Id, ruta2Id) {
+    const ruta1 = rutas[ruta1Id];
+    const ruta2 = rutas[ruta2Id];
+    
+    const comunes = [];
+    ruta1.paraderos.forEach(p1 => {
+        const paraderoComun = ruta2.paraderos.find(p2 => p2.nombre === p1.nombre);
+        if (paraderoComun) {
+            comunes.push({
+                nombre: p1.nombre,
+                coordenadas: p1.coordenadas
+            });
+        }
+    });
+    
+    return comunes;
+}
+
+function sonPuntosCercanos(punto1, punto2, tolerancia = 0.0001) {
+    return Math.abs(punto1[0] - punto2[0]) < tolerancia && 
+           Math.abs(punto1[1] - punto2[1]) < tolerancia;
 }
 
 function mostrarDetallesRutaHibrida(ruta, transbordo) {

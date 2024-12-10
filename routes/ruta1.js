@@ -1,9 +1,9 @@
 const ruta1 = {
-    nombre: "Ruta 1 - Centro",
-    descripcion: "Ruta del centro histórico",
+    nombre: "OM32",
+    descripcion: "San Martín de Porres - San miguel",
     color: "red",
     frecuencia: "Cada 10 minutos",
-    precio: "$5.00",
+    precio: "S/. 3.00",
     puntos: [
         paraderos.par1.coordenadas,
         paraderos.par2.coordenadas,

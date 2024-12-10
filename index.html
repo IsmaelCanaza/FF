@@ -20,7 +20,47 @@
                 <h1><img src="images/fav.png" alt="favoritos">Ver mis favoritos</h1>
             </div>
             <div class="menu">
-                <img src="images/menu.png" alt="menu">
+                <button class="menu-btn">
+                  <img src="images/menu.png" alt="menu">
+                </button>
+
+                <div class="overlay"></div>
+
+                <div class="side-menu">
+                    <button class="close-btn">×</button>
+                    <a href="#" class="menu-item">Planifica tu viaje</a>
+                    <a href="#" class="menu-item">Estado del servicio</a>
+                    <a href="#" class="menu-item">Mapas y horarios</a>
+                    <a href="#" class="menu-item">Tarifas y recargas</a>
+                    <a href="#" class="menu-item">Red comunica</a>
+                    <a href="#" class="menu-item">Ayuda y contacto</a>
+                    <a href="#" class="menu-item">Acerca de red</a>
+                    
+                    <div class="language-section">
+                        <a href="#" class="menu-item">Español</a>
+                        <a href="#" class="menu-item">Quechua (Proximamente)</a>
+                    </div>
+                </div>
+
+                <script>
+                    const menuBtn = document.querySelector('.menu-btn');
+                    const sideMenu = document.querySelector('.side-menu');
+                    const closeBtn = document.querySelector('.close-btn');
+                    const overlay = document.querySelector('.overlay');
+
+                    menuBtn.addEventListener('click', () => {
+                        sideMenu.classList.add('active');
+                        overlay.classList.add('active');
+                    });
+
+                    const closeMenu = () => {
+                        sideMenu.classList.remove('active');
+                        overlay.classList.remove('active');
+                    };
+
+                    closeBtn.addEventListener('click', closeMenu);
+                    overlay.addEventListener('click', closeMenu);
+                </script>
             </div>
         </div>
     </div>
@@ -224,19 +264,19 @@
             </div>
             <div class="redes3">
                 <div class="fb">
-                    <img src="images/facebook-new.png" alt="">
+                    <a href="https://www.facebook.com/ATU.GobPeru"><img src="images/facebook-new.png" alt=""></a>
                 </div>
                 <div class="twt">
-                    <img src="images/twitter-x.png" alt="">
+                  <a href="https://x.com/ATU_GobPeru"><img src="images/twitter-x.png" alt=""></a>
                 </div>
                 <div class="ig">
-                    <img src="images/instagram.png" alt="">
+                  <a href="https://www.instagram.com/atu.gobperu"><img src="images/instagram.png" alt=""></a>
                 </div>
                 <div class="yt">
-                    <img src="images/youtube.png" alt="">
+                  <a href="https://www.youtube.com/c/ATUPer%C3%BA"><img src="images/youtube.png" alt=""></a>
                 </div>
                 <div class="tktk">
-                    <img src="images/tiktok.png" alt="">
+                  <a href="https://www.tiktok.com/@atuperu"><img src="images/tiktok.png" alt=""></a>
                 </div>
             </div>
         </div>

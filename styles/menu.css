@@ -85,3 +85,53 @@
     background: none;
     border: none;
 }
+#imageContainerL1 img,
+#imageContainerL2 img,
+#imageContainerL3 img,
+#imageContainerL4 img,
+#imageContainerL4a img,
+#imageContainerL5 img,
+#imageContainerL6 img,
+#imageContainerL6a img,
+#imageContainerL4b img,
+#imageContainerL3a img,
+#imageContainerL2a img,
+#imageContainerL1a img,
+#imageContainerL4c img,
+#imageContainerL3b img,
+#imageContainerL2b img,
+#imageContainerL6b img {
+    width: 600px;   /* Ancho fijo */
+    height: 1204px; /* Altura fija */
+    object-fit: contain; /* Ajuste sin recortar */
+}
+
+.download-button {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .download-button button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .download-button button:hover {
+    background-color: #45a049;
+  }
+  
+  .download-button button:active {
+    background-color: #397d3c;
+  }

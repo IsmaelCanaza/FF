@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Tarifas - Lima y Callao</title>
+  <link rel="stylesheet" href="styles/ConsultaTarifa.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Consulta de Tarifas</h1>
+    <p>Transporte público en Lima y Callao</p>
+  </header>
+
+  <main>
+    <section class="option-section">
+        <div class="option">
+            <button class="toggle-button" id="btn-metropolitano">
+              <img src="images/metropolitano.jpg" alt="Metropolitano">
+              <span>Metropolitano</span>
+            </button>
+            <div class="details hidden" id="info-metropolitano">
+              <h3>Metropolitano</h3>
+              <p><strong>Descripción:</strong> El Metropolitano es un sistema de transporte rápido que conecta los principales distritos de Lima y Callao, brindando una opción eficiente y moderna para los pasajeros que necesitan cruzar la ciudad. La red de buses de tránsito rápido (BRT) opera en un carril exclusivo, reduciendo los tiempos de traslado y evitando el tráfico pesado.</p>
+              <p><strong>Historia:</strong> El Metropolitano fue inaugurado en 2010 como parte de la modernización del sistema de transporte de Lima. Su construcción fue pensada para mejorar la conectividad entre el norte y el sur de la ciudad, beneficiando a miles de usuarios a diario.</p>
+              <p><strong>Horarios:</strong> El servicio está disponible de lunes a sábado desde las 5:00 a.m. hasta las 10:00 p.m., y los domingos de 7:00 a.m. a 9:00 p.m.</p>
+              <p><strong>Estaciones:</strong> El Metropolitano atraviesa los siguientes puntos clave de Lima:</p>
+              <ul>
+                <li>Estación Naranjal - Independencia</li>
+                <li>Estación Central - Cercado de Lima</li>
+                <li>Estación Matellini - Chorrillos</li>
+                <li>Estación Javier Prado - San Isidro</li>
+                <li>Estación Angamos - Surco</li>
+                <li>Estación Villa El Salvador - Surco</li>
+                <li>Estación Lurín - Zona Industrial</li>
+              </ul>
+              <p><strong>Tarifa:</strong> General: S/ 3.50 | Estudiantes: S/ 1.20 | Adultos mayores: S/ 1.00</p>
+              <p><strong>Servicios adicionales:</strong> El Metropolitano ofrece servicios diferenciados según la demanda, incluyendo buses expresos que hacen menos paradas en los trayectos más largos, garantizando una experiencia más rápida para los pasajeros que viajan desde el norte al sur de la ciudad.</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="option">
+        <button class="toggle-button" id="btn-alimentadores">
+          <img src="images/alimentadores.jpg" alt="Alimentadores">
+          <span>Alimentadores</span>
+        </button>
+        <div class="details hidden" id="info-alimentadores">
+          <h3>Alimentadores</h3>
+          <p><strong>Descripción:</strong> Los alimentadores son rutas de buses que conectan las estaciones del Metropolitano con zonas alejadas de Lima y Callao. Estas rutas son esenciales para llevar a los pasajeros desde las estaciones troncales del Metropolitano hacia diversas áreas residenciales y comerciales. El servicio está diseñado para facilitar la movilidad de los usuarios desde y hacia las principales rutas del sistema de transporte.</p>
+          
+          <h4>Rutas de Alimentadores:</h4>
+          
+          <p><strong>Alimentadores con rutas largas:</strong></p>
+          <ul>
+            <li>Ensenada</li>
+            <li>Puente Piedra</li>
+            <li>Trapiche</li>
+            <li>Villa El Salvador</li>
+            <li>Milagro de Jesús</li>
+            <li>Collique</li>
+            <li>Carabayllo</li>
+            <li>Tungasuca</li>
+            <li>Santo Domingo</li>
+          </ul>
+          <p><strong>Tarifa:</strong> S/ 1.50</p>
+      
+          <p><strong>Alimentadores con rutas cortas:</strong></p>
+          <ul>
+            <li>Alisos</li>
+            <li>Bertello</li>
+            <li>Izaguirre</li>
+            <li>Los Olivos</li>
+            <li>Mayolo</li>
+            <li>Payet</li>
+            <li>Tahuantinsuyo</li>
+            <li>Puno</li>
+            <li>Belaunde</li>
+            <li>América</li>
+            <li>Cedros de Villa</li>
+            <li>Próceres</li>
+          </ul>
+          <p><strong>Tarifa:</strong> S/ 1.00</p>
+          
+          <p><strong>Tarifa combinada troncal + alimentadores (integrada):</strong> S/ 3.50</p>
+      
+          <h4>Tarifa Preferencial:</h4>
+          <p><strong>Escolares:</strong> En el servicio troncal del Metropolitano la tarifa preferencial escolar es de S/ 1.25. Para las rutas alimentadoras, la tarifa escolar es de S/ 0.50 en las rutas largas y cortas.</p>
+          <p><strong>Corredor Azul:</strong> En el corredor azul, que va desde el Rímac hasta Barranco, los adultos pagan S/ 2.20, mientras que los universitarios y escolares pagan S/ 1.10.</p>
+          <p><strong>Corredor Rojo:</strong> Similar al corredor azul, con tarifas ajustadas para los diferentes grupos de usuarios.</p>
+          <p><strong>Corredor Morado:</strong> Las tarifas en este corredor siguen la misma estructura que en los otros corredores, garantizando tarifas accesibles para todos los pasajeros.</p>
+      
+          
+          <p>Los alimentadores operan a lo largo del día, con frecuencias ajustadas a la demanda. Durante las horas pico, las rutas largas y cortas pueden contar con buses adicionales para reducir el tiempo de espera. Además, los pasajeros pueden hacer uso de la tarjeta de acceso del Metropolitano para ingresar y salir de las estaciones alimentadoras de forma rápida y cómoda.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- Botón para regresar al inicio -->
+    <div class="back-button">
+      <button onclick="window.location.href = 'index.html';">Regresar al Inicio</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Consulta de tarifas 2024 - Lima y Callao</p>
+  </footer>
+
+  <script src="js/ConsultaTarifa.js"></script>
+</body>
+</html>

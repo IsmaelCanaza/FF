@@ -1,0 +1,100 @@
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.faq-item {
+    margin-bottom: 1px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #f4f4f4;
+    color: #064D94;
+    cursor: pointer;
+    padding: 20px 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.faq-question:hover {
+    background-color: #eeeeee;
+}
+
+.faq-answer {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.faq-answer-content {
+    padding: 25px;
+    color: #333333;
+    line-height: 1.5;
+    font-size: 15px;
+    transform: translateY(-10px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.faq-question::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #064D94;
+    border-bottom: 2px solid #064D94;
+    transform: rotate(45deg);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 10px;
+    position: relative;
+    top: -3px;
+}
+
+.faq-question.active {
+    background-color: #064D94;
+    color: white;
+}
+
+.faq-question.active::after {
+    border-color: white;
+    transform: rotate(-135deg);
+    top: 3px;
+}
+
+.faq-answer.show {
+    max-height: 2000px;
+    opacity: 1;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer.show .faq-answer-content {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.1s;
+}
+
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+    
+    .faq-answer-content {
+        padding: 20px;
+        font-size: 14px;
+    }
+}

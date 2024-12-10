@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Rutas de Autobús</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/inicio.css">
+    <link rel="stylesheet" href="styles/bloquefijo.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/Logotipo_ATU_2.png" alt="Logotipo_ATU"></a>
+        </div>
+        <div class="fav_menu">
+            <div class="fav">
+                <h1><img src="images/fav.png" alt="favoritos">Ver mis favoritos</h1>
+            </div>
+            <div class="menu">
+                <img src="images/menu.png" alt="menu">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Sistema de Rutas de Autobús</h1>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="Buscar ruta...">
+            <select id="rutaSelector">
+                <option value="todas">Todas las rutas</option>
+                <option value="ruta1">Ruta 1 - Centro</option>
+                <option value="ruta2">Ruta 2 - Norte</option>
+                <option value="ruta3">Ruta 3 - Oriente</option>
+            </select>
+        </div>
+
+        <div id="routeDetails"></div>
+        <button class="toggle-map" onclick="toggleMap()">Mostrar ruta en el mapa</button>
+        <div class="map-container" id="mapContainer">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    
+    <!-- Datos -->
+    <script src="paraderos.js"></script>
+    <script src="routes/ruta1.js"></script>
+    <script src="routes/ruta2.js"></script>
+    <script src="routes/ruta3.js"></script>
+    
+    <!-- Lógica principal -->
+    <script src="myh.js"></script>
+
+    <div class="redes1">
+        <div class="redes2">
+            <div class="telefono">
+                <h1><img src="images/telefono-blanco.png" alt="telefono">(01) 224-2444</h1>
+            </div>
+            <div class="texto">
+                <a href="preguntasfrecuentes.html"><h1>Preguntas frecuentes</h1></a>
+            </div>
+            <div class="redes3">
+                <div class="fb">
+                    <img src="images/facebook-new.png" alt="">
+                </div>
+                <div class="twt">
+                    <img src="images/twitter-x.png" alt="">
+                </div>
+                <div class="ig">
+                    <img src="images/instagram.png" alt="">
+                </div>
+                <div class="yt">
+                    <img src="images/youtube.png" alt="">
+                </div>
+                <div class="tktk">
+                    <img src="images/tiktok.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="antfoot">
+        <div class="footer">
+            <div class="footlogo">
+                <a href="index.html"><img src="images/Logo_ATU_4.jpg" alt=""></a>
+            </div>
+            <div>
+                <h1>Condiciones de uso y privacidad</h1>
+            </div>
+            <div class="footlogo2">
+               <img src="images/mtc.png" alt=""> 
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

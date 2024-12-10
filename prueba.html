@@ -1,57 +1,145 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        * {
             margin: 0;
-            padding: 1rem;
-            line-height: 1.5;
-        }
-
-        .nav-list {
-            list-style: none;
             padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 0.5rem;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 0.5rem;
+            box-sizing: border-box;
         }
 
-        .nav-list li:not(:last-child)::after {
-            content: '|';
-            margin-left: 0.5rem;
-            color: #666;
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            padding: 0;
         }
 
-        .nav-list a {
+        .menu-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            z-index: 998;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-menu {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #dc1a32;
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 999;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .menu-item {
+            padding: 15px 25px;
+            color: white;
             text-decoration: none;
-            color: #FF0066;
-            font-size: 0.9rem;
+            display: block;
+            font-family: Arial, sans-serif;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .nav-list a:hover {
-            text-decoration: underline;
+        .language-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
         }
 
-        h1 {
-            font-size: 1.5rem;
-            margin: 1rem 0;
-            font-weight: normal;
-            color: #333;
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .page-content {
+            padding: 20px;
+            min-height: 100vh;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#ayuda">Ayuda y contacto</a></li>
-        </ul>
-    </nav>
-    
-    <h1>Preguntas frecuentes</h1>
+    <div class="page-content">
+        <h1>Contenido de la página</h1>
+        <p>Este es un ejemplo de contenido que será opacado cuando el menú se abra.</p>
+    </div>
+
+    <button class="menu-btn">
+        <img src="/api/placeholder/50/50" alt="Menu">
+    </button>
+
+    <div class="overlay"></div>
+
+    <div class="side-menu">
+        <button class="close-btn">×</button>
+        <a href="#" class="menu-item">Planifica tu viaje</a>
+        <a href="#" class="menu-item">Estado del servicio</a>
+        <a href="#" class="menu-item">Mapas y horarios</a>
+        <a href="#" class="menu-item">Tarifas y recargas</a>
+        <a href="#" class="menu-item">Red comunica</a>
+        <a href="#" class="menu-item">Ayuda y contacto</a>
+        <a href="#" class="menu-item">Acerca de red</a>
+        
+        <div class="language-section">
+            <a href="#" class="menu-item">Español</a>
+            <a href="#" class="menu-item">English</a>
+            <a href="#" class="menu-item">Português</a>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const sideMenu = document.querySelector('.side-menu');
+        const closeBtn = document.querySelector('.close-btn');
+        const overlay = document.querySelector('.overlay');
+
+        menuBtn.addEventListener('click', () => {
+            sideMenu.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        const closeMenu = () => {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    </script>
 </body>
 </html>

@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    background-color: #1e3a8a; /* Color más profundo de azul */
+    color: white;
+    padding: 30px;
+    border-bottom: 6px solid #1d4ed8; /* Borde inferior más grueso */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Fuente más estilizada */
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-size: 1.1rem;
+}
+
+/* Option Styles */
+.option-section {
+    display: flex;
+  flex-direction: column;
+  gap: 30px; /* Mayor separación entre las opciones */
+  padding: 40px 20px; /* Añadí padding para mejor distribución */
+}
+
+.toggle-button {
+    width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #00509e, #1d89d4);
+  color: white;
+  border: none;
+  border-radius: 20px; /* Aumento de borde redondeado */
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;  /* Aumento de espacio para hacerlo más grande */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  font-size: 1.8rem; /* Aumento de tamaño de texto */
+  font-weight: bold; /* Resalta el texto */
+}
+
+.toggle-button img {
+    width: 120px; /* Aumento de tamaño de la imagen */
+    height: 120px;
+    margin-right: 30px; /* Más espacio entre la imagen y el texto */
+    border-radius: 15px; /* Borde más redondeado en la imagen */
+}
+
+.toggle-button span {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.toggle-button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento más pronunciado */
+  background-color: #1d89d4; /* Cambio de color cuando se pasa el mouse */
+}
+
+.toggle-button:hover img {
+    transform: rotate(10deg); /* Rotación de la imagen al pasar el mouse */
+}
+
+.details {
+    padding: 20px;
+    background-color: #e6f2ff;
+    border-radius: 10px;
+    border: 1px solid #1e3a8a;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.details h3 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1d4ed8;
+    color: white;
+    margin-top: 40px;
+    border-top: 6px solid #1e3a8a;
+    font-family: 'Roboto', sans-serif;
+}
+
+.back-button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-button button {
+    background-color: #34d399;  /* Color verde más brillante */
+    color: white;
+    padding: 15px 30px; /* Aumenté el tamaño del botón */
+    font-size: 1.3rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 220px; /* Ancho fijo para el botón */
+    font-family: 'Poppins', sans-serif;
+}
+
+.back-button button:hover {
+    background-color: #10b981;  /* Color verde más oscuro cuando se pasa el mouse */
+    transform: translateY(-5px);  /* Efecto de elevación */
+}
+
+.back-button button:focus {
+    outline: none;  /* Eliminar el borde al hacer clic */
+}

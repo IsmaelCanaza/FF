@@ -114,11 +114,11 @@
           </button>
           <button class="tab" data-tab="metro">
             <span class="tab-icon">🚇</span>
-            <span class="tab-text">Estado del servicio Metro</span>
+            <span class="tab-text">Estado del servicio Metropolitano</span>
           </button>
           <button class="tab" data-tab="metrotren">
             <span class="tab-icon">🚂</span>
-            <span class="tab-text">Estado del servicio MetroTren Nos</span>
+            <span class="tab-text">Estado del servicio del metro de Lima</span>
           </button>
         </div>
         
@@ -179,40 +179,206 @@
             </div>
             
             <div class="metro-lines">
+
               <div class="line-status">
-                <span class="line-badge L1">L1</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+                <span class="line-badge L1">REGULAR A</span>
+                <button onclick="toggleImage('imageContainerL1')">Ver Ruta</button>
+                <div id="imageContainerL1" style="display: none;">
+                  <a href="images/A-REGULAR.png" download="Ruta-Metro-Regular-A">
+                    <img src="images/A-REGULAR.png" alt="Ruta del metro" />
+                  </a>
+                </div>
+            </div>
+            
+            
+
+            <div class="line-status">
+              <span class="line-badge L2">REGULAR B</span>
+              <button onclick="toggleImage('imageContainerL2')">Ver Ruta</button>
+              <div id="imageContainerL2" style="display: none;">
+                  <a href="images/nuevo-Regular-B.jpg" download="REGULAR-B">
+                      <img src="images/nuevo-Regular-B.jpg" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L2">L2</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L3">REGULAR C</span>
+              <button onclick="toggleImage('imageContainerL3')">Ver Ruta</button>
+              <div id="imageContainerL3" style="display: none;">
+                  <a href="images/REGULAR-C-QR.png" download="REGULAR-C">
+                      <img src="images/REGULAR-C-QR.png" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L3">L3</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L4">REGULAR D</span>
+              <button onclick="toggleImage('imageContainerL4')">Ver Ruta</button>
+              <div id="imageContainerL4" style="display: none;">
+                  <a href="images/D-REGULAR.png" download="REGULAR-D">
+                      <img src="images/D-REGULAR.png" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L4">L4</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L4a">EXPRESO 1</span>
+              <button onclick="toggleImage('imageContainerL4a')">Ver Ruta</button>
+              <div id="imageContainerL4a" style="display: none;">
+                  <a href="images/EXPRESO-1AN_NS.jpg" download="EXPRESO-1">
+                      <img src="images/EXPRESO-1AN_NS.jpg" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L4a">L4a</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L5">EXPRESO 2</span>
+              <button onclick="toggleImage('imageContainerL5')">Ver Ruta</button>
+              <div id="imageContainerL5" style="display: none;">
+                  <a href="FF/images/EXPRESO-2A_NS.jpg" download="EXPRESO-2">
+                      <img src="images/EXPRESO-2A_NS.jpg" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L5">L5</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L6">EXPRESO 3</span>
+              <button onclick="toggleImage('imageContainerL6')">Ver Ruta</button>
+              <div id="imageContainerL6" style="display: none;">
+                  <a href="FF/images/EXPRESO-3B.png" download="EXPRESO-3">
+                      <img src="images/EXPRESO-3B.png" alt="Ruta del metro" />
+                  </a>
               </div>
-              <div class="line-status">
-                <span class="line-badge L6">L6</span>
-                <span>Sin alteraciones</span>
-                <span></span>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L6">EXPRESO 5</span>
+              <button onclick="toggleImage('imageContainerL6a')">Ver Ruta</button>
+              <div id="imageContainerL6a" style="display: none;">
+                  <a href="images/EXPREO 5.jpg" download="EXPRESO-5">
+                      <img src="images/EXPREO 5.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L5">EXPRESO 6</span>
+              <button onclick="toggleImage('imageContainerL5a')">Ver Ruta</button>
+              <div id="imageContainerL5a" style="display: none;">
+                  <a href="images/EXPRESO-6.png" download="EXPRESO-6">
+                      <img src="images/EXPRESO-6.png" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L4">EXPRESO 7</span>
+              <button onclick="toggleImage('imageContainerL4b')">Ver Ruta</button>
+              <div id="imageContainerL4b" style="display: none;">
+                  <a href="images/EXPRESO-7.png" download="EXPRESO-7">
+                      <img src="images/EXPRESO-7.png" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L3">EXPRESO 8</span>
+              <button onclick="toggleImage('imageContainerL3a')">Ver Ruta</button>
+              <div id="imageContainerL3a" style="display: none;">
+                  <a href="images/nuevo-EX8-QR.jpg" download="EXPRESO-8">
+                      <img src="images/nuevo-EX8-QR.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L2">EXPRESO 9</span>
+              <button onclick="toggleImage('imageContainerL2a')">Ver Ruta</button>
+              <div id="imageContainerL2a" style="display: none;">
+                  <a href="images/nuevo-EX9-(norte-a-sur)-QR.jpg" download="EXPRESO-9">
+                      <img src="images/nuevo-EX9-(norte-a-sur)-QR.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L1">EXPRESO 10</span>
+              <button onclick="toggleImage('imageContainerL1a')">Ver Ruta</button>
+              <div id="imageContainerL1a" style="display: none;">
+                  <a href="images/EXPRESO-10.png" download="EXPRESO-10">
+                      <img src="images/EXPRESO-10.png" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L4">EXPRESO 11</span>
+              <button onclick="toggleImage('imageContainerL4c')">Ver Ruta</button>
+              <div id="imageContainerL4c" style="display: none;">
+                  <a href="images/EX11-NS.jpg" download="EXPRESO-11">
+                      <img src="images/EX11-NS.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L3">EXPRESO 12</span>
+              <button onclick="toggleImage('imageContainerL3b')">Ver Ruta</button>
+              <div id="imageContainerL3b" style="display: none;">
+                  <a href="images/EX12.jpg" download="EXPRESO-12">
+                      <img src="images/EX12.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L2">SUPER EXPRESO</span>
+              <button onclick="toggleImage('imageContainerL2b')">Ver Ruta</button>
+              <div id="imageContainerL2b" style="display: none;">
+                  <a href="images/SUPEREXPRE.jpg" download="SUPER-EXPRESO">
+                      <img src="images/SUPEREXPRE.jpg" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L1">SUPER EXPRESO NORTE</span>
+              <button onclick="toggleImage('imageContainerL1b')">Ver Ruta</button>
+              <div id="imageContainerL1b" style="display: none;">
+                  <a href="images/SUPEREEXPRESONORTE.png" download="SUPER-EXPRESO-NORTE">
+                      <img src="images/SUPEREEXPRESONORTE.png" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+          <div class="line-status">
+              <span class="line-badge L6">LECHUCEROS</span>
+              <button onclick="toggleImage('imageContainerL6b')">Ver Ruta</button>
+              <div id="imageContainerL6b" style="display: none;">
+                  <a href="images/mapa-Lechucero2.png" download="LECHUCEROS">
+                      <img src="images/mapa-Lechucero2.png" alt="Ruta del metro" />
+                  </a>
+              </div>
+          </div>
+          
+
+
+
+        <script>
+                function toggleImage(imageId) {
+                    var imageContainer = document.getElementById(imageId);
+                    if (imageContainer.style.display === "none") {
+                        imageContainer.style.display = "block";
+                    } else {
+                        imageContainer.style.display = "none";
+                    }
+                }
+         </script>
+              
+              
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -227,8 +393,54 @@
             
             <div class="metrotren">
               <div class="line-status">
-                <span style="font-weight:bold">MetroTren Nos</span>
-                <span>Sin alteraciones</span>
+                <span style="font-weight:bold">Metro de Lima</span>
+                
+                  <ul class="stations">
+                    <main>
+                      <section>
+                          <h2>Línea 1 (Verde)</h2>
+                          <ul>
+                              <li>Bayóvar (ACTIVO)</li>
+                              <li>Santa Rosa (ACTIVO)</li>
+                              <li>San Martín (ACTIVO)</li>
+                              <li>San Carlos (ACTIVO)</li>
+                              <li>Los Postes (ACTIVO)</li>
+                              <li>Los Jardines (ACTIVO)</li>
+                              <li>Pirámide del Sol (ACTIVO)</li>
+                              <li>Caja de Agua (ACTIVO)</li>
+                              <li>Presbítero Maestro (ACTIVO)</li>
+                              <li>El Ángel (ACTIVO)</li>
+                              <li>Miguel Grau (ACTIVO)</li>
+                              <li>Gamarra (ACTIVO)</li>
+                              <li>Arriola (ACTIVO)</li>
+                              <li>La Cultura (ACTIVO)</li>
+                              <li>San Borja Sur (ACTIVO)</li>
+                              <li>Angamos (ACTIVO)</li>
+                              <li>Cabitos (ACTIVO)</li>
+                              <li>Ayacucho (ACTIVO)</li>
+                              <li>Jorge Chávez (ACTIVO)</li>
+                              <li>Atocongo (ACTIVO)</li>
+                              <li>San Juan (ACTIVO)</li>
+                              <li>María Auxiliadora (ACTIVO)</li>
+                              <li>Villa María (ACTIVO)</li>
+                              <li>Pumacahua (ACTIVO)</li>
+                              <li>Parque Industrial (ACTIVO)</li>
+                              <li>Villa El Salvador (ACTIVO)</li>
+                              <a> </a>
+                              <a> </a>
+                              <div class="download-button">
+                                <a href="images/Mapa_Linea_1_Metro_de_Lima-768x576.webp" download="Imagen-Ruta-Metro">
+                                  <button>DESCARGAR MAPA LINEA 1</button>
+                                </a>
+                              </div>
+                          </ul>
+                      </section>
+              
+                      
+                      
+                  </main>
+                  </ul>
+              </section>
                 <span></span>
               </div>
             </div>
@@ -240,16 +452,16 @@
     <div class="burbujas">
         <div class="subburbujas">
             <div class="tarjeta">
-                <a href="index.html"><img src="images/servicios-recarga-tu-tarjeta.png" alt="Tarjetas">Tarjeta SIT!</a>
+                <a href="tarjeta.html"><img src="images/servicios-recarga-tu-tarjeta.png" alt="Tarjetas">Tarjeta SIT!</a>
             </div>
             <div class="tarifas">
-                <a href="index.html"><img src="images/servicios-consulta-las-tarifas.png" alt="Tarjetas">Consulta las tarifas</a>
+                <a href="ConsultaTarifa.html"><img src="images/servicios-consulta-las-tarifas.png" alt="Tarjetas">Consulta las tarifas</a>
             </div>
             <div class="app">
-                <a href="index.html"><img src="images/servicios-descarga-nuestra-app.png" alt="Tarjetas">Descarga nuestra App</a>
+                <a href="https://portal.atu.gob.pe/app-ATU/aplicacionMovil.html"><img src="images/servicios-descarga-nuestra-app.png" alt="Tarjetas">Descarga nuestra App</a>
             </div>
             <div class="reclamos">
-                <a href="index.html"><img src="images/servicios-reclamos-y-sugerencias.png" alt="Tarjetas">Reclamos y sugerencias</a>
+                <a href="reclamos.html"><img src="images/servicios-reclamos-y-sugerencias.png" alt="Tarjetas">Reclamos y sugerencias</a>
             </div>
         </div>
     </div>
@@ -263,21 +475,31 @@
                 <a href="preguntasfrecuentes.html"><h1>Preguntas frecuentes</h1></a>
             </div>
             <div class="redes3">
-                <div class="fb">
-                    <a href="https://www.facebook.com/ATU.GobPeru"><img src="images/facebook-new.png" alt=""></a>
-                </div>
-                <div class="twt">
-                  <a href="https://x.com/ATU_GobPeru"><img src="images/twitter-x.png" alt=""></a>
-                </div>
-                <div class="ig">
-                  <a href="https://www.instagram.com/atu.gobperu"><img src="images/instagram.png" alt=""></a>
-                </div>
-                <div class="yt">
-                  <a href="https://www.youtube.com/c/ATUPer%C3%BA"><img src="images/youtube.png" alt=""></a>
-                </div>
-                <div class="tktk">
-                  <a href="https://www.tiktok.com/@atuperu"><img src="images/tiktok.png" alt=""></a>
-                </div>
+              <div class="fb">
+                <a href="https://www.facebook.com/ATU.GobPeru/" target="_blank">
+                    <img src="images/facebook-new.png" alt="Facebook">
+                </a>
+            </div>
+            <div class="twt">
+                <a href="https://x.com/ATU_GobPeru" target="_blank">
+                    <img src="images/twitter-x.png" alt="Twitter">
+                </a>
+            </div>
+            <div class="ig">
+                <a href="https://www.instagram.com/atu.gobperu/" target="_blank">
+                    <img src="images/instagram.png" alt="Instagram">
+                </a>
+            </div>
+            <div class="yt">
+                <a href="https://www.youtube.com/c/ATUPer%C3%BA" target="_blank">
+                    <img src="images/youtube.png" alt="YouTube">
+                </a>
+            </div>
+            <div class="tktk">
+                <a href="https://www.tiktok.com/@atuperu" target="_blank">
+                    <img src="images/tiktok.png" alt="TikTok">
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -287,9 +509,9 @@
             <div class="footlogo">
                 <a href="index.html"><img src="images/Logo_ATU_4.jpg" alt=""></a>
             </div>
-            <div>
-                <h1>Condiciones de uso y privacidad</h1>
-            </div>
+            <h1>
+                    <a href="Doc/PyP.pdf" download="condiciones y privacidad">Condiciones de uso y privacidad</a>
+                </h1>
             <div class="footlogo2">
                <img src="images/mtc.png" alt=""> 
             </div>

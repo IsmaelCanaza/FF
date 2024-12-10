@@ -1,0 +1,183 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #005a9c;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Reclamo section */
+.reclamo-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.reclamo-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #005a9c;
+}
+
+.reclamo-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.reclamo-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.reclamo-info {
+    width: 40%;
+    text-align: left;
+}
+
+.reclamo-info h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #005a9c;
+}
+
+.reclamo-info p {
+    font-size: 16px;
+    color: #333;
+}
+
+.reclamo-form {
+    width: 55%;
+    padding: 20px;
+    background-color: #e9f2fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reclamo-form .form-group {
+    margin-bottom: 20px;
+}
+
+.reclamo-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.reclamo-form input,
+.reclamo-form select,
+.reclamo-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.reclamo-form textarea {
+    resize: vertical;
+}
+
+.reclamo-form button.submit-btn {
+    background-color: #005a9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reclamo-form button.submit-btn:hover {
+    background-color: #003f6b;
+}
+
+/* Footer styles */
+footer {
+    background-color: #005a9c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para la alerta */
+.alerta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.alerta p {
+    margin: 0;
+}
+
+.alerta:hover {
+    cursor: pointer;
+}
+
+/* Animación de desaparición de la alerta */
+.alerta desaparece {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+#telefono-error {
+    font-size: 14px;
+    color: red;
+    display: none;
+    margin-top: 5px;
+}
+
